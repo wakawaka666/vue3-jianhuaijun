@@ -55,6 +55,19 @@ const cdn = {
   }
 }
 module.exports = {
+  css: {
+    extract: true,
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          require('postcss-pxtorem')({
+            rootValue: 37.5,
+            propList: ['*']
+          })
+        ]
+      }
+    }
+  },
   //不需要生产环境的 source map加速生产环境构建，大大减小打包后的体积
   productionSourceMap: false,
   //解决 Invalid Host header问题（服务器域名访问出现的问题），

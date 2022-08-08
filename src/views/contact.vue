@@ -12,7 +12,11 @@
             <li
               v-for="(item, index) in checkboxList"
               :key="item"
-              :class="formList1.liaoJieType.includes(checkboxList[index]) ? 'active-checkbox' : ''"
+              :class="
+                formList1.liaoJieType.includes(checkboxList[index])
+                  ? 'active-checkbox'
+                  : ''
+              "
               @click="check(index)"
             >
               {{ item }}
@@ -25,13 +29,23 @@
             placeholder="在这里输入您想知道的问题，我们会尽快与您取得联系"
           />
           <br />
-          <label>* 姓名：</label><input type="text" v-model="formList1.name" placeholder="请输入姓名" />
+          <label>* 姓名：</label
+          ><input
+            type="text"
+            v-model="formList1.name"
+            placeholder="请输入姓名"
+          />
           <br />
-          <label>* 手机：</label><input type="text" v-model="formList1.mobile" placeholder="请输入手机" />
+          <label>* 手机：</label
+          ><input
+            type="text"
+            v-model="formList1.mobile"
+            placeholder="请输入手机"
+          />
           <input type="button" value="提 交" @click="submit1" />
         </div>
       </div>
-      <div class="jhjys-item" style="border: 2x solid #000000">
+      <div class="jhjys-item right-mobile" style="border: 2x solid #000000">
         <div class="jhjys-title" style="border-bottom: 1px solid #000000">
           意见反馈
         </div>
@@ -62,7 +76,7 @@
             v-model="formList2.email"
             placeholder="请输入邮箱"
           />
-          <input type="button" value="提 交" @click="submit2" />
+          <input type="button" class="btn-two" value="提 交" @click="submit2" />
         </div>
       </div>
     </div>
@@ -80,7 +94,7 @@
 
 <script>
 import { reactive } from "vue";
-import { Feedback,Cooperation } from "@api/api.js";
+import { Feedback, Cooperation } from "@api/api.js";
 import { ElMessage } from "element-plus";
 export default {
   setup() {
@@ -92,7 +106,7 @@ export default {
       "选址评估",
       "证照办理",
     ]);
-    
+
     const check = (i) => {
       var idx = formList1.liaoJieType.indexOf(checkboxList[i]);
       //如果已经选中了，那就取消选中，如果没有，则选中
@@ -104,14 +118,14 @@ export default {
     };
     const formList1 = reactive({
       formId: 3,
-      liaoJieType: []
-    })
+      liaoJieType: [],
+    });
     const submit1 = () => {
-      Cooperation(formList1).then(response => {
+      Cooperation(formList1).then((response) => {
         console.log(response);
         ElMessage.success("提交成功");
-      })
-    }
+      });
+    };
     const formList2 = reactive({
       formId: 2,
     });
@@ -125,13 +139,21 @@ export default {
     const amapConfig = reactive({
       zoom: 16,
       radius: 100,
-      center: [121.48804,31.324363],
+      center: [121.48804, 31.324363],
       label: {
         content: "上海梅拉餐饮有限公司",
         offset: [10, 12],
       },
     });
-    return { checkboxList, amapConfig,formList1, formList2,submit1, submit2, check };
+    return {
+      checkboxList,
+      amapConfig,
+      formList1,
+      formList2,
+      submit1,
+      submit2,
+      check,
+    };
   },
 };
 </script>
@@ -144,11 +166,18 @@ export default {
 .jhjys-wrap {
   display: flex;
   justify-content: space-between;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    display: unset;
+  }
 }
 .jhjys-item {
   width: 48%;
   border-radius: 10px;
   overflow: hidden;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 715px;
+    margin: 0 auto;
+  }
 }
 .jhjys-title {
   font-size: 28px;
@@ -168,6 +197,9 @@ export default {
   width: 15%;
   display: inline-block;
   text-align: right;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    font-size: 24px;
+  }
 }
 .jhjys-item:last-child {
   border: 2px solid #000000;
@@ -183,30 +215,50 @@ export default {
   width: 72%;
   color: #000;
 }
-.jhjys-item:last-child .content-padding input::-webkit-input-placeholder{
-  color: #968C8C;
+.jhjys-item:last-child .content-padding input::-webkit-input-placeholder {
+  color: #968c8c;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    font-size: 18px;
+    
+  }
 }
 .content-padding ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-    overflow: auto;
-    justify-content: unset !important;
-    margin-top: 20px;
+  overflow: auto;
+  justify-content: unset !important;
+  margin-top: 20px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    justify-content: flex-end !important;
+    width: 605px ;
+    
+  }
 }
-.content-padding ul li{
+.content-padding ul li {
   width: 66px;
-  background: #B41719;
+  background: #b41719;
   color: #fff;
   padding: 14px 21px;
   cursor: pointer;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   text-align: center;
   margin-bottom: 12px;
   margin-right: 4px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 148px;
+    height: 60px;
+    padding: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    margin-right: 18px;
+    font-size: 22px;
+  }
 }
-.active-checkbox{
+.active-checkbox {
   color: #b41719 !important;
   background: #fff !important;
 }
@@ -214,8 +266,8 @@ export default {
   width: 82%;
   margin-bottom: 30px;
 }
-.content-padding input::-webkit-input-placeholder{
-  color: #EFEFEF;
+.content-padding input::-webkit-input-placeholder {
+  color: #efefef;
 }
 .content-padding input[type="text"] {
   border: none;
@@ -225,6 +277,9 @@ export default {
   border: 1px solid #b9b7b7;
   background: transparent;
   color: #fff;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    font-size: 18px;
+  }
 }
 .content-padding input[type="text-area"] {
   border: none;
@@ -238,6 +293,11 @@ export default {
 .jhjys-item:last-child .content-padding input[type="button"] {
   background: #b41719;
   color: #fff;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+   font-size: 26px;
+   width: 321px;
+   height: 61px;
+  }
 }
 .content-padding input[type="button"] {
   background: #fff;
@@ -250,6 +310,21 @@ export default {
   border-radius: 25px;
   margin-top: 15px;
   margin-left: calc(50% - 138px);
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+   font-size: 26px;
+   width: 321px;
+   height: 61px;
+  }
+}
+.btn-two{
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    margin-left: calc(50% - 160px) !important;
+  }
+}
+.right-mobile{
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    margin-top: 40px;
+  }
 }
 .content-padding ul {
   overflow: hidden;
@@ -265,6 +340,10 @@ export default {
   width: 1204px;
   height: 506px;
   border-radius: 8px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 715px;
+    height: 678px;
+    margin: 0 auto;
+  }
 }
-
 </style>

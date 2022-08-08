@@ -122,9 +122,16 @@ export default {
 }
 .content-left {
   width: 70%;
+  @media screen and (min-width: 300px) and (max-width: 1333px){
+    width: 715px;
+    margin: 0 auto;
+  }
 }
 .content-right {
   width: 26%;
+  @media screen and (min-width: 300px) and (max-width: 1333px){
+    display: none;
+  }
 }
 .category-wrap {
   border: 2px solid #000000;
@@ -142,6 +149,9 @@ export default {
   padding-bottom: 14px;
   margin-right: 60px;
   cursor: pointer;
+  @media screen and (min-width: 300px) and (max-width: 1333px){
+    font-size: 24px;
+  }
 }
 .category-list li {
   width: 100%;
@@ -155,10 +165,16 @@ export default {
 .category-list li span:first-child {
   color: #050706;
   font-size: 18px;
+  @media screen and (min-width: 300px) and (max-width: 1333px){
+    font-size: 22px;
+  }
 }
 .category-list li span:last-child {
   color: #919593;
   font-size: 16px;
+  @media screen and (min-width: 300px) and (max-width: 1333px){
+    font-size: 22px;
+  }
 }
 .content-right > img {
   height: 36px;
@@ -196,6 +212,9 @@ export default {
   line-height: 40px;
   color: #fff;
   text-indent: 20px;
+  @media screen and (min-width: 300px) and (max-width: 1333px){
+    font-size: 26px;
+  }
 }
 .swiper-img {
   width: 100%;

@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import {setPcRem,setMobileRem} from './rem.js'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -15,9 +16,20 @@ initAMapApiLoader({
 import 'animate.css';
 import 'animate.css/animate.compat.css'
 
+
 const app = createApp(App)
 // 挂载navigator至原型
 app.config.globalProperties.navigator = navigator
+let flag = navigator.userAgent.match(
+  /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+);
+if(flag){
+  console.log('手机')
+  setMobileRem()
+}else{
+  console.log('PC')
+  setPcRem()
+}
 app.use(store)
     .use(router)
     .use(lazyPlugin, {

@@ -1,18 +1,16 @@
 <template>
-    <div class="main-wrap">
-        <router-view />
-<Footer/>
-    </div>
+  <div class="main-wrap">
+    <router-view />
+    <Footer />
+  </div>
 </template>
 
 <script>
-import Footer from './Footer.vue'
-export default({
-    components:{Footer},
-    setup() {
-        
-    },
-})
+import Footer from "./Footer.vue";
+export default {
+  components: { Footer },
+  setup() {},
+};
 </script>
 
 <style lang="scss" scoped>

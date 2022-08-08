@@ -161,11 +161,27 @@ table {
   width: 1207px;
   margin: 0px auto;
 }
+
+
 .banner {
-    width: 1209px;
-    margin: 0px auto;
-    margin-top: 20px;
-    text-align: center;
+  width: 1209px;
+  margin: 0px auto;
+  margin-top: 20px;
+  text-align: center;
+
+}
+@media screen and (min-width: 300px) and (max-width: 1333px) {
+  .ppjj {
+    width: 715px;
+  }
+  .banner{
+    width: 713px;
+    height: 272px;
+  }
+  .banner img{
+    width: 713px;
+    height: 272px;
+  }
 }
 /*侧边栏滚动条样式*/
 /*滚动条样式*/

@@ -2,9 +2,10 @@
   <div class="banner"><img src="@assets/img/sszx_banner.png" /></div>
   <div class="ppjj content-wrap">
     <div class="content-left">
-      <div class="detail-title">{{ detailInfo.title }}
-        <br>
-        <span>来源：{{detailInfo.lastEditAdminName}}</span>
+      <div class="detail-title">
+        {{ detailInfo.title }}
+        <br />
+        <span>来源：{{ detailInfo.lastEditAdminName }}</span>
       </div>
       <div class="content-wrap" v-html="detailInfo.body"></div>
     </div>
@@ -14,8 +15,8 @@
         <li v-for="item in newsRightList" :key="item">
           <img :src="`http://139.196.192.147:99${item.imageUrl}`" alt="" />
           <div>
-            <p>{{item.title}}</p>
-            <span>{{item.addDate}}</span>
+            <p>{{ item.title }}</p>
+            <span>{{ item.addDate }}</span>
           </div>
         </li>
       </ul>
@@ -25,7 +26,7 @@
 
 <script>
 import { useRoute } from "vue-router";
-import { reactive, ref,onBeforeMount } from "vue";
+import { reactive, ref, onBeforeMount } from "vue";
 import { GetNewsList } from "@api/api.js";
 export default {
   setup() {
@@ -38,7 +39,7 @@ export default {
       };
       GetNewsList(requestData).then((response) => {
         let data = response.contents;
-         newsRightList.push(...data) 
+        newsRightList.push(...data);
       });
     };
     onBeforeMount(() => {
@@ -62,9 +63,16 @@ export default {
 }
 .content-left {
   width: 70%;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 715px;
+    margin: 0 auto;
+  }
 }
 .content-right {
   width: 26%;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    display: none;
+  }
 }
 .category-wrap {
   border: 2px solid #000000;
@@ -162,15 +170,18 @@ export default {
   background: #b41719;
   z-index: 1;
 }
-.detail-title{
-    color: #050706;
-    font-size: 22px;
-    border-bottom: 1px solid #E4E4E4;
+.detail-title {
+  color: #050706;
+  font-size: 22px;
+  border-bottom: 1px solid #e4e4e4;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    text-align: center;
+  }
 }
-.detail-title span{
-    color: #9A9999;
-    font-size: 16px;
-    margin: 15px 0;
-    display: block;
+.detail-title span {
+  color: #9a9999;
+  font-size: 16px;
+  margin: 15px 0;
+  display: block;
 }
 </style>

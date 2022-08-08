@@ -41,15 +41,27 @@ export default {
 	height: 280px;
 	background: #282828;
 	margin-top: 26px;
+	@media screen and (min-width: 300px) and (max-width: 1333px){
+		width: 100%;
+		height: 360px;
+		position: relative;
+	}
 }
 .foot{
 	width: 1207px;
 	margin:0px auto;
+	@media screen and (min-width: 300px) and (max-width: 1333px){
+		width: 100%;
+	}
 }
 .foot_left{
 	width: 465px;
 	padding-top: 40px;
 	float: left;
+	@media screen and (min-width: 300px) and (max-width: 1333px){
+		width: 325px;
+		padding-left: 20px;
+	}
 }
 .foot_left a{
 	display: block;
@@ -61,6 +73,10 @@ export default {
 	margin-top: 30px;
 	line-height: 48px;
 	border-bottom: 1px solid #626262;
+	@media screen and (min-width: 300px) and (max-width: 1333px){
+		margin-right: 20px;
+		width: 140px;
+	}
 }
 .foot_mid{
 	width: 365px;
@@ -69,6 +85,16 @@ export default {
 	color: #898989;
 	line-height: 24px;
 	padding-top: 70px;
+	@media screen and (min-width: 300px) and (max-width: 1333px){
+		float: unset;
+		position: absolute;
+		left: 18px;
+		bottom: 10px;
+		width: 100%;
+		line-height: 1.5;
+		width: 713px;
+		
+	}
 }
 .foot_mid p{
 	margin-top: 30px;
@@ -77,24 +103,43 @@ export default {
 	float: right;
 	width: 340px;
 	padding-top: 70px;
+	@media screen and (min-width: 300px) and (max-width: 1333px){
+		width: 340px;
+		padding-right: 20px;
+		padding-top: 45px;
+	}
 }
 .ewm{
 	float: left;
 	width: 139px;
+	@media screen and (min-width: 300px) and (max-width: 1333px){
+		float: right;
+		padding-top: 15px;
+	}
 }
 .lxdh{
 	color:#fff;
 	font-size: 16px;
 	float: left;
 	margin-left: 26px;
+	@media screen and (min-width: 300px) and (max-width: 1333px){
+		margin-left: unset;
+	}
 }
 .lxdh img{
 	margin-top: 30px;
 	display: block;
 	margin-bottom: 8px;
+	@media screen and (min-width: 300px) and (max-width: 1333px){
+		margin-top: unset;
+		margin-bottom: 20px;
+	}
 }
 .lxdh p{
 	font-size: 26px;
+	@media screen and (min-width: 300px) and (max-width: 1333px){
+		margin-top: 10px;
+	}
 }
 .bott{
 	background: #000000;
@@ -103,5 +148,8 @@ export default {
 	color: #898989;
 	font-size: 14px;
 	text-align: center;
+	@media screen and (min-width: 300px) and (max-width: 1333px){
+		font-size: 10px;
+	}
 }	
 </style>

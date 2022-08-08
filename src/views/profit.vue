@@ -146,6 +146,19 @@ export default {
 .title-img {
   height: 36px;
   padding: 50px 0 40px 0;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    height: 37px;
+  }
+}
+.title-img:nth-child(1){
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    margin-left: calc(50% - 250px);
+  }
+}
+.title-img:nth-child(3){
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    margin-left: calc(50% - 192px);
+  }
 }
 .xsfs-wrap {
   display: flex;
@@ -158,6 +171,9 @@ export default {
   align-items: center;
   justify-content: space-around;
   border: 2px solid #000000;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    border: unset;
+  }
 }
 .xsfs-item img {
   height: 112px;
@@ -167,16 +183,25 @@ export default {
   font-size: 26px;
   font-weight: 400;
   margin: 55px 0 25px 0;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    margin: 28px 0 25px 0;
+  }
 }
 .xsfs-item span {
   font-size: 18px;
   color: #565656;
   text-align: center;
   padding-bottom: 91px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    padding-bottom: 55px;
+  }
 }
 .tz-wrap {
   display: flex;
   justify-content: space-between;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    display: unset;
+  }
 }
 table {
   width: 70%;
@@ -184,6 +209,10 @@ table {
   border-color: grey;
   border-radius: 10px;
   border: 6px solid #b41719;
+   @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 713px;
+    margin: 0 auto;
+  }
 }
 th,td {
   border: 1px solid #fff;
@@ -224,6 +253,12 @@ thead:last-child tr td {
   width: 334px;
   border: 2px solid #000;
   border-radius: 7px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 713px;
+    margin: 0 auto;
+    float: unset;
+    margin-top: 26px;
+  }
 }
 .ppjj_right h1 {
   height: 70px;
@@ -244,19 +279,31 @@ thead:last-child tr td {
 .touzi ul li {
   height: 50px;
   line-height: 50px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    margin-bottom: 28px;
+  }
 }
 .touzi ul li label {
   width: 65px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    font-size: 24px;
+  }
 }
 .touzi ul li input[type="text"] {
   border: none;
   border-bottom: 1px solid #d2d2d2;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 500px;
+  }
 }
 .touzi input.telep[type="text"] {
   width: 275px;
   height: 40px;
   border: 1px solid #d2d2d2;
   border-radius: 3px;
+   @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 400px;
+  }
 }
 .touzi ul li input[type="button"] {
   background: #b41719;
@@ -268,12 +315,22 @@ thead:last-child tr td {
   height: 50px;
   border-radius: 25px;
   margin-top: 15px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 318px;
+    height: 57px;
+    margin-left: calc(50% - 159px);
+    font-size: 30px;
+  }
 }
 .touzi p {
   padding: 27px;
   color: #636060;
   font-size: 14px;
   line-height: 26px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    line-height: 35px;
+    font-size: 20px;
+  }
 }
 .touzi p span {
   color: #000;

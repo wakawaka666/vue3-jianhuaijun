@@ -1,4 +1,5 @@
 <template>
+  <div class="first-mobile"></div>
   <!-- banner -->
   <div class="banner"><img src="@assets/img/banner.png" /></div>
   <!-- 品牌简介一栏 -->
@@ -6,7 +7,13 @@
     <!-- 左侧品牌简介 -->
     <div class="ppjj_left">
       <div class="jianjie">
-        <h1><img src="@assets/img/pinpjianj.png" /></h1>
+        <h1>
+          <img src="@assets/img/pinpjianj.png" />
+        </h1>
+        <img
+          class="pinpjianj-mobile-img"
+          src="@assets/img/pinpjianj_mobile.png"
+        />
         <p>
           见淮君淮南牛肉汤，采用淮南传统制作工艺，选取江淮一带黄牛为原料，以牛骨熬汤，辅以传统工艺炮制的几十种滋补药材和卤料，汤汁鲜香醇厚，具有养生保健之功效。店内红油均以自制牛油与炸好的淮椒配制而成，最大程度还原正宗淮南牛肉汤之原汁原味，给食客身在店中，心至淮南之感。
         </p>
@@ -71,6 +78,7 @@
     <div class="clearfix"></div>
     <!-- 一站式开店服务 -->
     <div class="yzskd">
+      <div class="yzskd-mobile"></div>
       <h1><img src="@assets/img/wenzi.png" /></h1>
       <div class="yzskd_left">
         <h2><img src="@assets/img/yzsfw.png" /></h2>
@@ -101,12 +109,50 @@
       >
     </h1>
     <div class="ckzm_img">
-      <img src="@assets/img/ckzm_01.jpg" />
-      <img src="@assets/img/ckzm_02.jpg" />
-      <img src="@assets/img/ckzm_03.jpg" />
-      <img src="@assets/img/ckzm_04.jpg" />
+      <div>
+        <p>加盟见淮君</p>
+        <p>为您保驾护航</p>
+        <router-link class="to-btn" to="/brand">
+          <span>点击进入</span>
+          <img src="@assets/img/index-arrow.png" alt="" />
+        </router-link>
+        <img src="@assets/img/ckzm_01.jpg" />
+      </div>
+
+      <div>
+        <p>公开透明</p>
+        <p>轻松开店</p>
+        <router-link class="to-btn" to="/cooperation">
+          <span>点击进入</span>
+          <img src="@assets/img/index-arrow.png" alt="" />
+        </router-link>
+        <img src="@assets/img/ckzm_03.jpg" />
+      </div>
+      <div>
+        <p>利润与日俱增</p>
+        <p>月月进账喜人</p>
+        <router-link class="to-btn" to="/profit">
+          <span>点击进入</span>
+          <img src="@assets/img/index-arrow.png" alt="" />
+        </router-link>
+        <img src="@assets/img/ckzm_04.jpg" />
+      </div>
+      <div>
+        <p>全流程</p>
+        <p>高品质服务</p>
+        <router-link class="to-btn" to="/contact">
+          <span>点击进入</span>
+          <img src="@assets/img/index-arrow.png" alt="" />
+        </router-link>
+        <img src="@assets/img/ckzm_02.jpg" />
+      </div>
     </div>
+     <div class="ljxq-mobile">
+    <router-link to="/cooperation">了解详情</router-link>
   </div>
+  </div>
+ 
+
   <!-- /创客招募 -->
 </template>
 
@@ -120,10 +166,10 @@ export default {
       formId: 4,
     });
     const submit = () => {
-        Calculator(formList).then((response) => {
-          console.log(response);
-          ElMessage.success("提交成功");
-        });
+      Calculator(formList).then((response) => {
+        console.log(response);
+        ElMessage.success("提交成功");
+      });
     };
     return { formList, submit };
   },
@@ -136,6 +182,9 @@ export default {
   margin: 0px auto;
   margin-top: 20px;
   text-align: center;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    display: none;
+  }
 }
 .ppjj {
   margin-top: 30px;
@@ -146,14 +195,35 @@ export default {
   background: #b41719;
   padding: 40px 0px;
   border-radius: 8px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    float: unset;
+    width: unset;
+    margin: 0 auto;
+    background: unset;
+  }
 }
 .jianjie {
   width: 370px;
   margin-left: 44px;
   float: left;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    margin-left: unset;
+  }
+}
+.pinpjianj-mobile-img {
+  display: none;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    display: block;
+    width: 148px;
+    height: 49px;
+    padding: 0 242px 24px 24px;
+  }
 }
 .jianjie h1 {
   margin-bottom: 20px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    display: none;
+  }
 }
 .jianjie p {
   font-size: 16px;
@@ -161,6 +231,15 @@ export default {
   line-height: 32px;
   margin-bottom: 30px;
   text-indent: 2em;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    color: #333333;
+    font-size: 20px;
+  }
+}
+.ppjj_left a {
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    display: none !important;
+  }
 }
 .ppjj_left a,
 .ckzm h1 a {
@@ -182,8 +261,23 @@ export default {
   height: 375px;
   border-radius: 6px;
   margin-left: 24px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    margin-right: unset;
+    margin-left: unset;
+    width: 298px;
+    height: 296px;
+    margin-top: 60px;
+  }
 }
 .goodpp {
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 715px;
+    height: 139px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 36px;
+  }
 }
 .goodpp h2 {
   float: left;
@@ -196,9 +290,37 @@ export default {
   padding: 18px;
   font-size: 14px;
   font-weight: normal;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 230px;
+    // height: 139px;
+    margin-left: unset;
+    float: unset;
+    border-radius: 10px;
+    padding: 18px 0;
+    padding-bottom: 10px;
+  }
+}
+.goodpp h2:nth-child(1) {
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    background: #e96b5c;
+  }
+}
+.goodpp h2:nth-child(2) {
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    background: #f2c85a;
+  }
+}
+.goodpp h2:nth-child(3) {
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    background: #67b3ed;
+  }
 }
 .goodpp h2 img {
   display: inline-block;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 40px;
+    height: 35px;
+  }
 }
 .goodpp h2 span {
   margin-top: 10px;
@@ -212,6 +334,9 @@ export default {
   width: 334px;
   border: 2px solid #000;
   border-radius: 7px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: unset;
+  }
 }
 .ppjj_right h1 {
   height: 70px;
@@ -232,6 +357,9 @@ export default {
 .touzi ul li {
   height: 50px;
   line-height: 50px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    margin-bottom: 28px;
+  }
 }
 .touzi ul li label {
   width: 65px;
@@ -239,12 +367,18 @@ export default {
 .touzi ul li input[type="text"] {
   border: none;
   border-bottom: 1px solid #d2d2d2;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 500px;
+  }
 }
 .touzi input.telep[type="text"] {
   width: 275px;
   height: 40px;
   border: 1px solid #d2d2d2;
   border-radius: 3px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 400px;
+  }
 }
 .touzi ul li input[type="button"] {
   background: #b41719;
@@ -256,6 +390,11 @@ export default {
   height: 50px;
   border-radius: 25px;
   margin-top: 15px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 318px;
+    height: 57px;
+    margin-left: calc(50% - 159px);
+  }
 }
 .touzi p {
   padding: 27px;
@@ -271,19 +410,55 @@ export default {
   background: #efead7;
   padding: 40px 0px;
   border-radius: 8px;
+  position: relative;
   overflow: hidden;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    margin-top: 60px;
+    overflow: unset;
+  }
+}
+.yzskd-mobile {
+  width: 412px;
+  height: 64px;
+  background: url("~@assets/img/yzskd_mobile.png");
+  background-size: 100% 100%;
+  position: absolute;
+  left: 0;
+  top: -32px;
+  display: none;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    display: block;
+  }
 }
 .yzskd h1 {
   text-align: center;
   margin-bottom: 50px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    display: none;
+  }
 }
 .yzskd_left {
   float: left;
   width: 495px;
+
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    float: unset;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 .yzskd_left h2 {
   margin-top: 30px;
   text-align: center;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    position: absolute;
+    left: 63px;
+    top: -70px;
+    img {
+      width: 265px;
+    }
+  }
 }
 .yzs {
   background: #b41719;
@@ -292,6 +467,13 @@ export default {
   height: 294px;
   margin-left: 60px;
   margin-top: 25px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 654px;
+    height: 400px;
+    margin-left: unset;
+    margin-top: unset;
+    margin-bottom: 20px;
+  }
 }
 .yzs p {
   width: 238px;
@@ -300,6 +482,10 @@ export default {
   color: #fff;
   font-size: 18px;
   text-align: center;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 325px;
+    height: 200px;
+  }
 }
 .yzs p.bb1px {
   border-bottom: 2px solid #ebdcca;
@@ -310,6 +496,10 @@ export default {
 .yzs p img {
   display: block;
   margin: 20px auto;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 73px;
+    margin: 30px 126px 40px 126px;
+  }
 }
 .yzskd_right {
   margin-right: 50px;
@@ -317,6 +507,18 @@ export default {
   width: 560px;
   height: 415px;
   border-radius: 6px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    float: unset;
+    margin-right: unset;
+    margin: 0 auto;
+
+    width: 656px;
+    height: 302px;
+    img {
+      width: 656px;
+      height: 302px;
+    }
+  }
 }
 .ad {
   margin-top: 30px;
@@ -327,23 +529,43 @@ export default {
 .ckzm {
   background: #b41719;
   width: 1207px;
-  padding: 60px 0px;
+  padding: 40px 0px;
   margin: 0px auto;
   border-radius: 8px;
   margin-top: 25px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 712px;
+    position: relative;
+  }
 }
 .ckzm h1 {
   margin: 0px 60px;
   overflow: hidden;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
 }
 .ckzm h1 a {
   float: right;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    display: none;
+  }
 }
 .ckzm_img {
   overflow: hidden;
   padding-left: 18px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    padding-left: unset;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
-.ckzm_img img {
+.ckzm_img div {
   margin-left: 32px;
   width: 251px;
   border: 1px solid #050101;
@@ -351,5 +573,85 @@ export default {
   border-radius: 8px;
   height: 444px;
   float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    margin-left: unset;
+    width: 292px;
+    margin-bottom: 24px;
+  }
+}
+.ljxq-mobile {
+  display: none;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    display: block;
+    width: 270px;
+    height: 76px;
+    line-height: 76px;
+    text-align: center;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 38px;
+    font-size: 26px;
+    margin:  0 auto;
+  }
+  a{
+    color: #fff;
+  }
+}
+.ckzm_img div > img {
+  width: 251px;
+  height: 444px;
+  display: block;
+  border-radius: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    width: 292px;
+  }
+}
+.ckzm_img div p {
+  color: #fff;
+  font-size: 28px;
+  margin: 8px 0;
+  z-index: 1;
+}
+.to-btn {
+  width: 50%;
+  padding: 6px 20px;
+  border: 1px solid #fff;
+  display: flex;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.to-btn span {
+  color: #fff;
+  font-size: 20px;
+}
+.to-btn img {
+  display: block;
+  width: 20px;
+  height: 11px;
+  margin-left: 10px;
+}
+.first-mobile {
+  background-image: url("~@assets/img/index_img1_mobile.png");
+  background-size: 100% 100%;
+  width: 715px;
+  height: 370px;
+  margin: 0 auto;
+  display: none;
+  margin-top: 18px;
+  @media screen and (min-width: 300px) and (max-width: 1333px) {
+    display: block;
+  }
 }
 </style>
